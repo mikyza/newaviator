@@ -1,0 +1,226 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Prevent Number Input Arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Main Wrapper */
+#wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+
+/* Header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Last Crash History */
+#last-counters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#last-counters p {
+    padding: 5px 12px;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Colored Borders */
+.blueBorder { color: rgb(52, 180, 255); border-color: rgb(52, 180, 255); }
+.purpleBorder { color: rgb(145, 62, 248); border-color: rgb(145, 62, 248); }
+.burgundyBorder { color: rgb(192, 23, 180); border-color: rgb(192, 23, 180); }
+
+/* Mid Wrapper */
+#mid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Balance Display */
+#balance {
+    text-transform: uppercase;
+    color: #30fcbe;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#balance-amount {
+    border: 2px solid #30fcbe;
+    font-size: 16px;
+    border-radius: 20px;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin-top: 5px;
+}
+
+/* Counter Section */
+#counterWrapper {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Background Animation */
+#bg-image {
+    position: absolute;
+    width: 300%;
+    height: 450%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#bg-image::before {
+    content: '';
+    background-image: url('img/aviator-re-bg.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotation 8s infinite linear;
+}
+
+/* Rotation Animation */
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Game Canvas */
+#canvas {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    border: 1px solid #2a2b2e;
+    border-radius: 20px;
+    margin: 10px auto;
+}
+
+/* Counter Text */
+#counter {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    z-index: 999;
+}
+
+/* Bottom Section */
+#bottom-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 15px 0;
+}
+
+/* Bet Input */
+#input-wrapper {
+    width: 100%;
+}
+
+#bet-input {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    background: transparent;
+    font-weight: bold;
+    font-size: 17px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Bet Button */
+#bet-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fb024c;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+#bet-button:hover {
+    background-color: #d9003b;
+}
+
+/* Message */
+#message {
+    color: #fb024c;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #header, #bottom-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #bet-button {
+        margin-left: 0;
+    }
+}
